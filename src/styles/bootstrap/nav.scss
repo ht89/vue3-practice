@@ -1,0 +1,17 @@
+.nav {
+  --bs-nav-link-color: var(--black);
+  --bs-nav-link-hover-color: var(--white);
+}
+
+.navbar {
+  --bs-navbar-nav-link-padding-x: 2rem;
+  --bs-navbar-active-color: var(--white);
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: #337ab7;
+}
+
+.nav-link:hover {
+  background-color: var(--black);
+}

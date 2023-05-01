@@ -1,7 +1,30 @@
 // override Bootstrap styles here
+:root {
+  --primary-color: var(--teal);
+  --secondary-color: var(--green);
+  --light-color: var(--beige);
+  --lighter-color: #f3f3eb;
 
+  --black: #141414;
+  --white: #fefdfb;
+  --white-tone: #fcfbf9;
+
+  --green: #89e872;
+  --teal: #006b7d;
+  --beige: #e6e6d7;
+  --orange: #ff7731;
+  --yellow: #e6f03c;
+  --blue: #276ef1;
+  --purple: #7e55fc;
+  --salmon: #ffb991;
+}
+
+// Bootstrap imports
 @import 'bootstrap/scss/bootstrap.scss';
 @import 'bootstrap-vue-next/src/styles/styles.scss';
+
+// override Bootstrap components
+@import './bootstrap/nav.scss';
 
 @import './markdown.css';
 
