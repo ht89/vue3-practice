@@ -1,0 +1,6 @@
+$steps: 3;
+$step-size: 50px;
+
+@function get-step-position($steps, $step-size, $step-index) {
+  @return calc(#{$step-index * 100 / ($steps + 1)}% - #{$step-size});
+}
