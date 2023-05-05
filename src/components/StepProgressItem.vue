@@ -39,6 +39,14 @@ defineProps<{
     color: var(--black);
   }
 
+  .indicator {
+    .icon {
+      display: none;
+      color: var(--white);
+      font-size: 12px;
+    }
+  }
+
   @for $i from 1 through $steps {
     &.step-#{$i} {
       left: get-step-position($steps, $step-size, $i);
@@ -49,7 +57,7 @@ defineProps<{
     background-color: var(--primary-color);
 
     .label {
-      color: white;
+      color: var(--white);
     }
   }
 
@@ -57,7 +65,7 @@ defineProps<{
     .indicator {
       padding: 3px;
       background-color: var(--secondary-color);
-      border: 2px solid white;
+      border: 2px solid var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -69,7 +77,6 @@ defineProps<{
 
     .indicator .icon {
       display: block;
-      color: var(--white);
     }
   }
 }

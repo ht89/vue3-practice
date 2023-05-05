@@ -58,13 +58,5 @@ else
     border-radius: 4px;
   }
 
-  .indicator {
-    .icon {
-      display: none;
-      color: white;
-      font-size: 12px;
-    }
-  }
-
 }
 </style>
