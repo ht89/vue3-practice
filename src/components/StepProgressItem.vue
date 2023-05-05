@@ -1,18 +1,19 @@
 <script setup lang="ts">
 defineProps<{
   step: number
-  isActive?: boolean
+  isActive: boolean
+  isComplete: boolean
 }>()
 </script>
 
 <template>
-  <div class="step" :class="{ active: isActive }">
+  <div class="step" :class="{ active: isActive, complete: isComplete }">
     <div class="label">
       {{ step }}
     </div>
 
     <div class="indicator">
-      <em class="icon i-carbon-check" />
+      <em class="icon i-carbon-checkmark" />
     </div>
   </div>
 </template>
@@ -68,6 +69,7 @@ defineProps<{
 
     .indicator .icon {
       display: block;
+      color: var(--white);
     }
   }
 }

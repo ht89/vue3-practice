@@ -1,10 +1,23 @@
+<script setup lang="ts">
+const props = defineProps<{
+  step: number
+  steps: number
+}>()
+
+let currentProgressClass = ''
+if (props.step < 4)
+  currentProgressClass = `progress-${props.step}`
+else
+  currentProgressClass = 'progress-complete'
+</script>
+
 <template>
-  <div class="progress progress-1">
+  <div class="progress" :class="currentProgressClass">
     <div class="bg" />
 
-    <StepProgressItem class="step-1" :step="1" :is-active="true" />
-    <StepProgressItem class="step-2" :step="2" />
-    <StepProgressItem class="step-3" :step="3" />
+    <template v-for="item in steps" :key="item">
+      <StepProgressItem :class="`step-${item}`" :step="item" :is-active="step >= item" :is-complete="step > item" />
+    </template>
   </div>
 </template>
 

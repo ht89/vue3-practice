@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+const currentStep = 1
+const steps = 3
 </script>
 
 <template>
@@ -13,6 +14,6 @@
   </p>
 
   <div flex="~" my-14 justify-center>
-    <StepProgress />
+    <StepProgress :step="currentStep" :steps="steps" />
   </div>
 </template>
