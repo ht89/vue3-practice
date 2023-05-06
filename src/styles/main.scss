@@ -14,10 +14,29 @@
   --bs-white: #fefdfb !important;
   --bs-black: #141414 !important;
 
+  --bs-success: #89e872 !important;
+  --bs-info: #276ef1 !important;
+  --bs-warning: #ff7731 !important;
+  --bs-danger: #ff0000 !important;
+
   --bs-border-radius: 0.25rem !important;
   --bs-body-color: var(--bs-dark) !important;
   --bs-border-color: #ccc !important;
   --bs-body-bg: var(--bs-white) !important;
+
+  --bs-primary-rgb: 0, 107, 125 !important;
+  --bs-secondary-rgb: 137, 232, 114 !important;
+  --bs-light-rgb: 230, 230, 215 !important;
+  --bs-dark-rgb: 85, 85, 85 !important;
+  --bs-white-rgb: 254, 253, 251 !important;
+  --bs-black-rgb: 20, 20, 20 !important;
+  --bs-body-color-rgb: 85, 85, 85 !important;
+  --bs-body-bg-rgb: 254, 253, 251 !important;
+
+  --bs-success-rgb: 137, 232, 114 !important;
+  --bs-info-rgb: 39, 110, 241 !important;
+  --bs-warning-rgb: 255, 119, 49 !important;
+  --bs-danger-rgb: 255, 0, 0!important;
 }
 
 // Bootstrap imports
