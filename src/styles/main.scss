@@ -10,10 +10,14 @@
   --bs-primary: var(--bs-teal) !important;
   --bs-secondary: var(--bs-green) !important;
   --bs-light: #e6e6d7 !important;
+  --bs-dark: #555 !important;
   --bs-white: #fefdfb !important;
   --bs-black: #141414 !important;
 
   --bs-border-radius: 0.25rem !important;
+  --bs-body-color: var(--bs-dark) !important;
+  --bs-border-color: #ccc !important;
+  --bs-body-bg: var(--bs-white) !important;
 }
 
 // Bootstrap imports
