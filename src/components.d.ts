@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StepOne: typeof import('./components/StepOne.vue')['default']
     StepProgress: typeof import('./components/StepProgress.vue')['default']
     StepProgressItem: typeof import('./components/StepProgressItem.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']

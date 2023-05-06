@@ -30,7 +30,7 @@ else
   position: relative;
   height: $height;
   width: 70%;
-  background-color: var(--beige);
+  background-color: var(--bs-light);
   transition: width 0.2s;
   overflow: unset;
 
@@ -54,7 +54,7 @@ else
     width: 0%;
     height: $height;
     position: absolute;
-    background-color: var(--primary-color);
+    background-color: var(--bs-primary);
     border-radius: 4px;
   }
 

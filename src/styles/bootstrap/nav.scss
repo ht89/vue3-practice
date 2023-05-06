@@ -1,11 +1,6 @@
 .nav {
-  --bs-nav-link-color: var(--black);
-  --bs-nav-link-hover-color: var(--white);
-}
-
-.navbar {
-  --bs-navbar-nav-link-padding-x: 2rem;
-  --bs-navbar-active-color: var(--white);
+  --bs-nav-link-color: var(--bs-black);
+  --bs-nav-link-hover-color: var(--bs-white);
 }
 
 .nav-pills {
@@ -13,5 +8,5 @@
 }
 
 .nav-link:hover {
-  background-color: var(--black);
+  background-color: var(--bs-black);
 }

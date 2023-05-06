@@ -1,22 +1,19 @@
 // override Bootstrap styles here
 :root {
-  --primary-color: var(--teal);
-  --secondary-color: var(--green);
-  --light-color: var(--beige);
-  --lighter-color: #f3f3eb;
+  --bs-green: #89e872 !important;
+  --bs-teal: #006b7d !important;
+  --bs-orange: #ff7731 !important;
+  --bs-yellow: #e6f03c !important;
+  --bs-blue: #276ef1 !important;
+  --bs-purple: #7e55fc !important;
 
-  --black: #141414;
-  --white: #fefdfb;
-  --white-tone: #fcfbf9;
+  --bs-primary: var(--bs-teal) !important;
+  --bs-secondary: var(--bs-green) !important;
+  --bs-light: #e6e6d7 !important;
+  --bs-white: #fefdfb !important;
+  --bs-black: #141414 !important;
 
-  --green: #89e872;
-  --teal: #006b7d;
-  --beige: #e6e6d7;
-  --orange: #ff7731;
-  --yellow: #e6f03c;
-  --blue: #276ef1;
-  --purple: #7e55fc;
-  --salmon: #ffb991;
+  --bs-border-radius: 0.25rem !important;
 }
 
 // Bootstrap imports
@@ -25,6 +22,8 @@
 
 // override Bootstrap components
 @import './bootstrap/nav.scss';
+@import './bootstrap/navbar.scss';
+@import './bootstrap/forms.scss';
 
 @import './markdown.css';
 

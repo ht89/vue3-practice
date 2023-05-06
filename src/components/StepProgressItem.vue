@@ -32,17 +32,17 @@ defineProps<{
   width: $step-size;
   height: $step-size;
   border-radius: 50%;
-  background-color: var(--beige);
+  background-color: var(--bs-light);
 
   .label {
     font-size: 140%;
-    color: var(--black);
+    color: var(--bs-black);
   }
 
   .indicator {
     .icon {
       display: none;
-      color: var(--white);
+      color: var(--bs-white);
       font-size: 12px;
     }
   }
@@ -54,18 +54,18 @@ defineProps<{
   }
 
   &.active {
-    background-color: var(--primary-color);
+    background-color: var(--bs-primary);
 
     .label {
-      color: var(--white);
+      color: var(--bs-white);
     }
   }
 
   &.complete {
     .indicator {
       padding: 3px;
-      background-color: var(--secondary-color);
-      border: 2px solid var(--white);
+      background-color: var(--bs-secondary);
+      border: 2px solid var(--bs-white);
       display: flex;
       align-items: center;
       justify-content: center;
