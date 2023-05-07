@@ -13,11 +13,11 @@ const server = useServerStore()
 
   <b-form>
     <b-form-row mb-3 justify-center>
-      <Autocomplete id="current-vendor" :cols="5" label="Select vendor" :list="server.vendors" />
+      <Autocomplete id="current-vendor" v-model="server.form.currentVendor" :cols="5" label="Select vendor" :list="server.vendors" />
     </b-form-row>
 
     <b-form-row mb-3 justify-center>
-      <Autocomplete id="current-model" :cols="5" label="Model name" :list="server.models" />
+      <Autocomplete id="current-model" v-model="server.form.currentModel" :cols="5" label="Model name" :list="server.models" :disabled="server.currentModelDisabled" />
     </b-form-row>
   </b-form>
 </template>

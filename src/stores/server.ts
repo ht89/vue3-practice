@@ -89,9 +89,20 @@ export const useServerStore = defineStore('server', () => {
     },
   ]
 
+  const form = {
+    currentVendor: ref(''),
+    currentModel: ref(''),
+  }
+
+  const currentModelDisabled = ref(true)
+
+  watch(form.currentVendor, newVal => currentModelDisabled.value = !newVal)
+
   return {
     vendors,
     models,
+    form,
+    currentModelDisabled,
   }
 })
 

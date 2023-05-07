@@ -4,7 +4,12 @@ const props = defineProps<{
   label: string
   id: string
   autocompleteEnabled?: string
+  disabled?: boolean
   list: Array<{ id: string; description: string }>
+}>()
+
+const { modelValue } = defineModels<{
+  modelValue: string
 }>()
 
 const listId = computed(() => `${props.id}-list`)
@@ -19,10 +24,12 @@ const listId = computed(() => `${props.id}-list`)
     >
       <b-form-input
         :id="id"
+        v-model="modelValue"
         :list="listId"
         type="text"
         :autocomplete="autocompleteEnabled ?? 'off'"
         required
+        :disabled="disabled ?? false"
       />
 
       <datalist :id="listId">
