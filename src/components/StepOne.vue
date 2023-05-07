@@ -36,28 +36,7 @@ const vendors = [{
 
   <b-form>
     <b-form-row justify-center>
-      <b-col cols="5">
-        <b-form-group
-          id="current-vendor-group"
-          label="Select vendor"
-          label-for="current-vendor"
-          label-class="w-fit"
-        >
-          <b-form-input
-            id="current-vendor"
-            list="current-vendors"
-            type="text"
-            autocomplete="off"
-            required
-          />
-
-          <datalist id="current-vendors">
-            <option v-for="vendor in vendors" :key="vendor.id">
-              {{ vendor.description }}
-            </option>
-          </datalist>
-        </b-form-group>
-      </b-col>
+      <Autocomplete id="current-vendor" :cols="5" label="Select vendor" :list="vendors" />
     </b-form-row>
   </b-form>
 </template>
