@@ -89,14 +89,12 @@ export const useServerStore = defineStore('server', () => {
     },
   ]
 
-  const form = {
-    currentVendor: ref(''),
-    currentModel: ref(''),
-  }
+  const form = reactive({
+    currentVendor: '',
+    currentModel: '',
+  })
 
-  const currentModelDisabled = ref(true)
-
-  watch(form.currentVendor, newVal => currentModelDisabled.value = !newVal)
+  const currentModelDisabled = computed(() => !form.currentVendor)
 
   return {
     vendors,
