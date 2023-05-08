@@ -92,6 +92,9 @@ export const useServerStore = defineStore('server', () => {
   const form = reactive({
     currentVendor: '',
     currentModel: '',
+    currentModelName: '',
+    currentKwh: 0,
+    addCurrentCpuManually: false,
   })
 
   const currentModelDisabled = computed(() => !form.currentVendor)

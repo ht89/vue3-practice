@@ -4,3 +4,7 @@
   border-color: var(--bs-border-color);
 
 }
+
+.form-check {
+  @apply w-fit;
+}

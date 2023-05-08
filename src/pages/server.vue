@@ -4,7 +4,7 @@ const steps = 3
 </script>
 
 <template>
-  <div h-screen>
+  <div>
     <h2 class="page-title" m-y-5 text-center>
       <strong>Calculate Your Cost And Energy Savings</strong>
     </h2>

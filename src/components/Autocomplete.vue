@@ -5,11 +5,11 @@ const props = defineProps<{
   id: string
   autocompleteEnabled?: string
   disabled?: boolean
-  list: Array<{ id: string; description: string }>
+  list?: Array<{ id: string; description: string }>
 }>()
 
 const { modelValue } = defineModels<{
-  modelValue: string
+  modelValue: string | number
 }>()
 
 const listId = computed(() => `${props.id}-list`)
@@ -32,11 +32,13 @@ const listId = computed(() => `${props.id}-list`)
         :disabled="disabled ?? false"
       />
 
-      <datalist :id="listId">
-        <option v-for="item in list" :key="item.id">
-          {{ item.description }}
-        </option>
-      </datalist>
+      <template v-if="list">
+        <datalist :id="listId">
+          <option v-for="item in list" :key="item.id">
+            {{ item.description }}
+          </option>
+        </datalist>
+      </template>
     </b-form-group>
   </b-col>
 </template>
