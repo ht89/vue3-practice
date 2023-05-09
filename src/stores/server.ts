@@ -95,6 +95,7 @@ export const useServerStore = defineStore('server', () => {
     currentModelName: '',
     currentKwh: 0,
     addCurrentCpuManually: false,
+    dataCenters: 0,
   })
 
   const currentModelDisabled = computed(() => !form.currentVendor)

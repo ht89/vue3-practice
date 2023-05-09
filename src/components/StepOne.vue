@@ -26,14 +26,28 @@ const server = useServerStore()
           <Autocomplete id="current-kwh" v-model="server.form.currentKwh" label="KW/h per CPU" mb-3 />
         </template>
 
-        <b-form-checkbox
-          id="current-cpu-addition"
-          v-model="server.form.addCurrentCpuManually"
-          name="current-cpu-addition"
-          mb-3
+        <div mb-3>
+          <b-form-checkbox
+            id="current-cpu-addition"
+            v-model="server.form.addCurrentCpuManually"
+            name="current-cpu-addition"
+          >
+            Add CPU manually
+          </b-form-checkbox>
+        </div>
+
+        <b-form-group
+          label="Number of data centers"
+          label-for="data-centers"
+          label-class="w-fit"
         >
-          Add CPU manually
-        </b-form-checkbox>
+          <b-form-input
+            id="data-centers"
+            v-model="server.form.dataCenters"
+            type="number"
+            required
+          />
+        </b-form-group>
       </b-col>
     </b-form-row>
   </b-form>
