@@ -12,32 +12,25 @@ const server = useServerStore()
   </p>
 
   <b-form>
-    <template v-if="!server.form.addCurrentCpuManually">
-      <b-form-row mb-3 justify-center>
-        <Autocomplete id="current-vendor" v-model="server.form.currentVendor" :cols="5" label="Select vendor" :list="server.vendors" />
-      </b-form-row>
-
-      <b-form-row mb-3 justify-center>
-        <Autocomplete id="current-model" v-model="server.form.currentModel" :cols="5" label="Model name" :list="server.models" :disabled="server.currentModelDisabled" />
-      </b-form-row>
-    </template>
-
-    <template v-else>
-      <b-form-row mb-3 justify-center>
-        <Autocomplete id="current-model-name" v-model="server.form.currentModelName" :cols="5" label="Enter model name" />
-      </b-form-row>
-
-      <b-form-row mb-3 justify-center>
-        <Autocomplete id="current-model-name" v-model="server.form.currentKwh" :cols="5" label="KW/h per CPU" />
-      </b-form-row>
-    </template>
-
-    <b-form-row mb-3 justify-center>
+    <b-form-row justify-center>
       <b-col cols="5">
+        <template v-if="!server.form.addCurrentCpuManually">
+          <Autocomplete id="current-vendor" v-model="server.form.currentVendor" label="Select vendor" :list="server.vendors" mb-3 />
+
+          <Autocomplete id="current-model" v-model="server.form.currentModel" label="Model name" :list="server.models" :disabled="server.currentModelDisabled" mb-3 />
+        </template>
+
+        <template v-else>
+          <Autocomplete id="current-model-name" v-model="server.form.currentModelName" label="Enter model name" mb-3 />
+
+          <Autocomplete id="current-kwh" v-model="server.form.currentKwh" label="KW/h per CPU" mb-3 />
+        </template>
+
         <b-form-checkbox
           id="current-cpu-addition"
           v-model="server.form.addCurrentCpuManually"
           name="current-cpu-addition"
+          mb-3
         >
           Add CPU manually
         </b-form-checkbox>
