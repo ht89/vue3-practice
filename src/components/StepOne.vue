@@ -49,7 +49,11 @@ const server = useServerStore()
           />
         </b-form-group>
 
-        <RangeSlider id="current-basis-price" v-model="server.form.basePrice" label="Base Price per KW/h" />
+        <RangeSlider
+          id="current-basis-price" v-model="server.form.basePrice" label="Base Price per KW/h" :min="0.1"
+          :max="5"
+          :step="0.05"
+        />
       </b-col>
     </b-form-row>
   </b-form>

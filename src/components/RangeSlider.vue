@@ -1,15 +1,40 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   label: string
   id: string
+  modelValue: number
   min?: number
   max?: number
   step?: number
 }>()
 
-const { modelValue } = defineModels<{
-  modelValue: number
-}>()
+const emit = defineEmits(['update:modelValue'])
+
+const value = computed({
+  get() {
+    return props.modelValue
+  },
+  set(value) {
+    const valNum = Number(value)
+    onRangeSliderChange(valNum)
+    emit('update:modelValue', valNum)
+  },
+})
+
+let slider: any
+onMounted(() => {
+  slider = document.querySelector(`#${props.id}`)
+})
+
+function calcSliderLinearGradient(currentValue: number, maxValue: number): string {
+  const valPercent = (currentValue / maxValue) * 100
+  return `linear-gradient(to right, #89e872 ${valPercent}%, #e6e6d7 ${valPercent}%)`
+}
+
+function onRangeSliderChange(value: number) {
+  slider.style.setProperty('--range-slider-bg', calcSliderLinearGradient(value, Number(slider.max)))
+  // input.value = slider.value;
+}
 </script>
 
 <template>
@@ -17,7 +42,7 @@ const { modelValue } = defineModels<{
     :label="label"
     :label-for="id"
   >
-    <b-form-input :id="id" v-model="modelValue" type="range" :min="min" :max="max" :step="step" />
+    <b-form-input :id="id" v-model="value" type="range" :min="min" :max="max" :step="step" />
   </b-form-group>
 </template>
 
@@ -35,12 +60,7 @@ const { modelValue } = defineModels<{
 input[type="range"] {
   $height: 12px;
 
-  position: relative;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
   height: $height;
-  background: var(--beige);
   outline: none;
 
   &:hover,
@@ -49,17 +69,12 @@ input[type="range"] {
   }
 
   &::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
+    background: var(--range-slider-bg, var(--bs-light));
     height: $height;
   }
 
   &::-moz-track {
-    -moz-appearance: none;
-    height: $height;
-  }
-
-  &::-ms-track {
-    appearance: none;
+    background: var(--range-slider-bg, var(--bs-light));
     height: $height;
   }
 
@@ -70,11 +85,6 @@ input[type="range"] {
 
   &::-moz-range-thumb {
     -webkit-appearance: none;
-    appearance: none;
-    @include thumb-styles;
-  }
-
-  &::-ms-thumb {
     appearance: none;
     @include thumb-styles;
   }
