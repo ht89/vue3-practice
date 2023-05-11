@@ -42,7 +42,21 @@ function onRangeSliderChange(value: number) {
     :label="label"
     :label-for="id"
   >
-    <b-form-input :id="id" v-model="value" type="range" :min="min" :max="max" :step="step" />
+    <b-form-row items-center>
+      <b-col cols="9">
+        <b-form-input :id="id" v-model="value" type="range" :min="min" :max="max" :step="step" />
+      </b-col>
+
+      <b-col>
+        <b-input-group>
+          <template #append>
+            <b-input-group-text>€</b-input-group-text>
+          </template>
+
+          <b-form-input :id="`${id}-input`" v-model="value" type="number" />
+        </b-input-group>
+      </b-col>
+    </b-form-row>
   </b-form-group>
 </template>
 
