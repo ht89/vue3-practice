@@ -33,7 +33,6 @@ function calcSliderLinearGradient(currentValue: number, maxValue: number): strin
 
 function onRangeSliderChange(value: number) {
   slider.style.setProperty('--range-slider-bg', calcSliderLinearGradient(value, Number(slider.max)))
-  // input.value = slider.value;
 }
 </script>
 
@@ -41,6 +40,7 @@ function onRangeSliderChange(value: number) {
   <b-form-group
     :label="label"
     :label-for="id"
+    label-class="w-fit"
   >
     <b-form-row items-center>
       <b-col cols="9">

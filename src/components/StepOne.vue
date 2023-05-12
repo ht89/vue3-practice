@@ -40,6 +40,7 @@ const server = useServerStore()
           label="Number of data centers"
           label-for="data-centers"
           label-class="w-fit"
+          mb-3
         >
           <b-form-input
             id="data-centers"
@@ -53,7 +54,12 @@ const server = useServerStore()
           id="current-basis-price" v-model="server.form.basePrice" label="Base Price per KW/h" :min="0.1"
           :max="5"
           :step="0.05"
+          mb-5
         />
+
+        <b-button pill block variant="primary" class="w-3/5">
+          Next
+        </b-button>
       </b-col>
     </b-form-row>
   </b-form>

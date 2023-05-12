@@ -1,0 +1,14 @@
+.btn {
+  --bs-btn-padding-x: 2rem;
+  --bs-btn-padding-y: 0.75rem;
+  --bs-btn-font-size: 1.125rem;
+  --bs-btn-font-weight: bold;
+
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-black);
+  --bs-btn-hover-border-color: var(--bs-black);
+}
